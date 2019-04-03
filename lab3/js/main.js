@@ -15,12 +15,41 @@ function getQuote(canvas,context){
            return;
        }
        if (xhr.status == 200){
-           context.font = 'bold 26px Arial';
+
+           context.font = 'bold 20px Arial';
            context.fillStyle = 'white';
            context.textAlign = 'center';
            context.textBaseline = 'middle';
            var text = JSON.parse(xhr.responseText)['quoteText'];
-           context.fillText(text,50,50);
+           var maxWidth = canvas.width - 40;
+           var maxHeight = canvas.height - 40;
+           var Center = canvas.width/2;
+           var words = text.split(' ');
+           var lines = [];
+           var currentLine = '';
+           words.forEach(function (value) {
+
+               var newLine = currentLine+value+' ';
+               var newLineWidth = context.measureText(newLine).width;
+               if(newLineWidth > maxWidth){
+                    lines.push(currentLine);
+                    currentLine = value + ' ';
+               }else{
+                   currentLine = newLine;
+               }
+               
+           });
+           lines.push(currentLine);
+           var marginTop = (maxHeight - lines.length*30)/2;
+           lines.forEach(function(value){
+               context.fillText(value,Center,marginTop);
+               marginTop+=30;
+               }
+           )
+
+
+
+
 
        }
    };
@@ -38,11 +67,16 @@ function createCanvas(width,height){
     var context = canvas.getContext('2d');
     canvas.width = width;
     canvas.height = height;
+    var counter = 0;
     drawOneImage(canvas,context,0,0,100,200);
     drawOneImage(canvas,context,0,200,210   ,100);
+
     drawOneImage(canvas,context,100,0,110   ,200);
+
     drawOneImage(canvas,context,210,0,100   ,300);
     getQuote(canvas,context);
+
+
     return canvas;
 }
 function addCanvasToBody(width,height){
