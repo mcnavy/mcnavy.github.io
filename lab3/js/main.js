@@ -1,9 +1,13 @@
+var isGood = 0;
 function drawOneImage(canvas,context,x,y,width,height){
     var pic = new Image();
     pic.setAttribute('crossOrigin','anonymous')
     pic.onload = function(){
         context.drawImage(pic,x,y,width,height);
-
+        isGood +=1;
+        if(isGood == 4){
+            getQuote(canvas,context);
+        }
     }
     pic.src = `https://source.unsplash.com/collection/1127160/${width}x${height}`;
 }
@@ -67,13 +71,15 @@ function createCanvas(width,height){
     var context = canvas.getContext('2d');
     canvas.width = width;
     canvas.height = height;
-    var counter = 0;
+
     drawOneImage(canvas,context,0,0,100,200);
     drawOneImage(canvas,context,0,200,210   ,100);
 
     drawOneImage(canvas,context,100,0,110   ,200);
 
     drawOneImage(canvas,context,210,0,100   ,300);
+
+
     getQuote(canvas,context);
 
 
