@@ -7,6 +7,9 @@ function drawOneImage(canvas,context,x,y,width,height){
     }
     pic.src = `https://source.unsplash.com/collection/1127160/${width}x${height}`;
 }
+function getQuote(canvas,conext){
+
+}
 
 
 
