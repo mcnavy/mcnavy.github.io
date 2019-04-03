@@ -21,7 +21,10 @@ function getQuote(canvas,context){
        if (xhr.status == 200){
 
            context.font = 'bold 20px Arial';
+           context.fillStyle = 'rgba(0,0,0,0.7)';
+           context.fillRect(0, 0, canvas.width, canvas.height);
            context.fillStyle = 'white';
+
            context.textAlign = 'center';
            context.textBaseline = 'middle';
            var text = JSON.parse(xhr.responseText)['quoteText'];
@@ -80,7 +83,7 @@ function createCanvas(width,height){
     drawOneImage(canvas,context,210,0,100   ,300);
 
 
-    getQuote(canvas,context);
+
 
 
     return canvas;
