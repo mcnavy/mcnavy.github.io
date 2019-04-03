@@ -63,14 +63,18 @@ function getQuote(canvas,context){
    xhr.send();
 
 }
-
+function save(){
+    var canvas = document.getElementById("myCanvas");
+    var data = canvas.toDataURL('image/jpeg');
+    this.href = data;
+}
 
 
 
 
 function createCanvas(width,height){
     var canvas = document.createElement('canvas');
-    canvas.id = "idCanvas";
+    canvas.id = "myCanvas";
     var context = canvas.getContext('2d');
     canvas.width = width;
     canvas.height = height;
@@ -89,6 +93,11 @@ function createCanvas(width,height){
     return canvas;
 }
 function addCanvasToBody(width,height){
+    var button = document.createElement('a');
+    button.id ='downloadButton';
+    button.setAttribute('download','lab3.jpg');
+    button.innerHTML = "Save";
     document.body.appendChild(createCanvas(width,height));
-
+    document.body.appendChild(button);
+    downloadButton.addEventListener('click',save,true);
 }
