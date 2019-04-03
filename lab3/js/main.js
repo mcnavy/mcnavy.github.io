@@ -7,7 +7,14 @@ function drawOneImage(canvas,context,x,y,width,height){
     }
     pic.src = `https://source.unsplash.com/collection/1127160/${width}x${height}`;
 }
-function getQuote(canvas,conext){
+function getQuote(canvas,context){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://cors-anywhere.herokuapp.com/http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=ru', true);
+    xhr.send();
+    context.font = 'bold 26px Arial';
+    context.fillStyle = 'white';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
 
 }
 
