@@ -17,3 +17,82 @@ body {
     top: 0;
     background: rgba(244, 244, 244, 0.79);
 }
+.caption{
+    position: absolute;
+    top: 30%;
+    margin: auto;
+    padding: 2em;
+}
+.caption p{
+    color:#666;
+    font-size: 20px;
+    width: 70%;
+    line-height: 1.5;
+    padding: 0;
+    padding-bottom: 10px;
+}
+.description {
+    padding: 0;
+    font-size: larger;
+}
+.description .short{
+    align-content: center;
+    vertical-align: center;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    text-align: justify;
+}
+.description .full {
+    align-content: center;
+    vertical-align: center;
+    padding-top: 70px;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 10px;
+    text-align: justify;
+}
+.description .short-image {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    padding: 60px;
+}
+.description .full-image {
+    display: inline-block;
+    height: auto;
+    max-width: 100%;
+    padding: 60px;
+}
+.advantages{
+    background-color: #202326;
+    color: lightgrey;
+}
+.advantages h2 {
+    text-align: center;
+}
+.advantages h4 {
+    text-align: center;
+    min-height: 60px;
+}
+.advantages .image {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    padding-left: 20px;
+}
+.advantages p {
+    font-size: 20px;
+    padding: 20px;
+    text-align: justify;
+}
+.contact-form {
+    background-color: #202326;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+.contact-form textarea {
+    min-height: 200px;
+    font-size: 16px;
+}
