@@ -1,37 +1,38 @@
 @media all and (max-width: 2500px) {
     .block1 {
-        width: 90%;
+        width: 350px;
         border: solid 1px black;
 
         float:left;
     }
     .block2{
-        width: 35%;
+        width: 350px;
         border:solid 1px black;
         float:left;
-
+        margin :1px;
     }
     .block3{
-        width: 25%;
+        width: 350px;
         border: solid 1px green;
         float: left;
-
+        margin: 1px;
     }
     .block4{
         width: 25%;
         border: solid 1px red;
         float: left;
+        margin: 1px;
     }
 
 }
 @media all and (max-width: 1300px){
     .block1{
-        width: 100%;
+        width: 250px;
         font-size: 16px;
         background: red;
     }
     .block3{
-        width:100%;
+        width:250px;
         font-size: 16px;
         float: left;
 
